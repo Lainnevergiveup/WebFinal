@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="daos.SCMapper">
+    <select id="getCourseList" resultType="string">
+        select cid from SC where sid=#{sid}
+    </select>
+    <select id="getStudentList" resultType="string">
+        select sid from SC where cid=#{cid}
+    </select>
+    <delete id="unchooseCourse">
+        delete from SC where sid=#{sid} and cid=#{cid}
+    </delete>
+    <insert id="chooseCourse">
+        insert into SC (cid,sid) values (#{cid},#{sid})
+    </insert>
+    <delete id="deleteCourse">
+        delete from SC where cid=#{cid}
+    </delete>
+</mapper>

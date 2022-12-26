@@ -2,16 +2,16 @@
   Created by IntelliJ IDEA.
   User: lain
   Date: 2022/12/21
-  Time: 00:26
+  Time: 00:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.*" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.*"   isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>问题编辑</title>
+    <title>提问列表</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
 </head>
@@ -20,14 +20,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar20">
         <p class="navbar-brand text-white mb-0">
-            <i class="fa d-inline fa-lg fa-stop-circle"></i> Web课后辅导系统学生端 </p>
+            <i class="fa d-inline fa-lg fa-stop-circle"></i> Web课后辅导系统教师端 </p>
     </button>
         <div class="collapse navbar-collapse" id="navbar20">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"> <a class="nav-link" href="../index.jsp">Home</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
             </ul>
-            <p class="d-none d-md-block lead mb-0 text-white"> <i class="fa d-inline fa-lg fa-stop-circle"></i> <b> Web课后辅导系统学生端</b> </p>
+            <p class="d-none d-md-block lead mb-0 text-white"> <i class="fa d-inline fa-lg fa-stop-circle"></i> <b> Web课后辅导系统教师端</b> </p>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mx-1"> <a class="nav-link" href="https://github.com/Lainnevergiveup/WebFinal">
                     <i class="fa fa-github fa-fw fa-lg"></i>
@@ -37,10 +37,6 @@
                 </a> </li>
             </ul>
         </div>
-
-
-
-
     </div>
 </nav>
 <div class="py-5 h-100 w-100">
@@ -48,28 +44,24 @@
         <div class="row" style="height: 100%">
             <div class="col-3 col-md-2" style="">
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item"> <a href="" class="active nav-link" data-toggle="pill" data-target="#askQuestion">发起提问</a> </li>
+                    <li class="nav-item"> <a href="" class="active nav-link" data-toggle="pill" data-target="#chooseCourse">提问列表</a> </li>
                 </ul>
             </div>
             <div class="col-9 col-md-10 h-100 w-100" style="height: 100%">
                 <div class="tab-content">
                     <div class="tab-pane fade show active h-100" id="questionList" role="tabpanel" height="100%">
-                                    <form action="./questionEdit.do?method=ask" method="post">
-                                        <div class="mb-4 row text-center">
-                                            <label for="title" class="control-label col-md-3">标题</label>
-                                            <div class="col-md-8">
-                                                <input type="text" id="title" name="title" class="form-control" placeholder="请输入标题" />
-                                            </div>
-                                        </div>
-                                        <div class="mb-4 row text-center">
-                                            <label for="question" class="control-label col-md-3">问题详情</label>
-                                            <div class="col-md-8">
-                                                <input type="text" id="question" name="question" class="form-control" placeholder="请在此键入问题详情" />
-                                            </div>
-                                        </div>
-                                        <input class="btn-primary" type="submit"  value="提问"  name="ask" id="ask"/>
-                                    </form>
 
+                        <c:forEach items="${questionList}" var="q">
+                            <div class="card" >
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>${q.title}</b></h5>
+                                    <h6 class="card-subtitle my-2 text-muted">${q.state}</h6>
+                                    <p class="card-text">${q.question}</p>
+                                    <a href="./questionDetail.do?qid=${q.id}" class="card-link">回复</a>
+                                    <a href="./deletequestion.do?qid=${q.id}" class="card-link">删除</a>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

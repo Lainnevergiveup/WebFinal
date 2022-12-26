@@ -23,7 +23,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.spm.pojo"/>
+        <package name="beans"/>
     </typeAliases>
 
 
@@ -40,12 +40,10 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/spm/dao/mapper/GradeMapper.xml"/>
-        <mapper resource="com/spm/dao/mapper/CourseMapper.xml" />
-        <mapper resource="com/spm/dao/mapper/CourseForCjwMapper.xml" />
-        <mapper resource="com/spm/dao/mapper/StudentMapper.xml" />
-        <mapper resource="com/spm/dao/mapper/StudentGradeMapper.xml" />
-        <mapper resource="com/spm/dao/mapper/TeacherMapper.xml" />
-        <mapper resource="com/spm/dao/mapper/TeacherRCourseMapper.xml" />
+        <mapper resource="mappers/AccountMapper.xml"></mapper>
+        <mapper resource="mappers/CourseMapper.xml"></mapper>
+        <mapper resource="mappers/SCMapper.xml"></mapper>
+        <mapper resource="mappers/TCMapper.xml"></mapper>
+        <mapper resource="mappers/QuestionMapper.xml"></mapper>
     </mappers>
 </configuration>

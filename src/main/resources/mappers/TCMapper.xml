@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="daos.TCMapper">
+    <select id="getCourseList" resultType="java.lang.String">
+        select cid from TC where tid=#{tid}
+    </select>
+    <select id="getTeacherList" resultType="string">
+        select tid from TC where cid=#{cid}
+    </select>
+    <delete id="unchooseCourse">
+        delete from TC where tid=#{tid} and cid=#{tid}
+    </delete>
+    <update id="updateCourse">
+        update TC set tid=#{tid} where cid = #{cid}
+    </update>
+    <delete id="deleteCourse">
+        delete from TC where cid=#{cid}
+    </delete>
+    <insert id="insertCourse">
+        insert into TC (cid,tid) values (#{cid},null)
+    </insert>
+    <delete id="deleteByTeacher">
+        delete from TC where tid=#{tid}
+    </delete>
+</mapper>
