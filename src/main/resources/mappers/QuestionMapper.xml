@@ -7,10 +7,10 @@
         select * from Question where cid = #{cid}
     </select>
     <insert id="insertQuestion" parameterType="beans.Question">
-        insert into Question (id,cid,title,question,answer,state) values (null,#{cid},#{title},#{question},#{answer},#{state})
+        insert into Question (id,cid,,sid,title,question,answer,state) values (null,#{cid},#{sid},#{title},#{question},#{answer},#{state})
     </insert>
     <update id="updateQuestion" parameterType="beans.Question">
-        update Question cid=#{cid},title=#{title},question=#{question},answer=#{answer},Question.state=#{state} where id=#{id}
+        update Question set cid=#{cid},title=#{title},question=#{question},answer=#{answer},Question.state=#{state} where id=#{id}
     </update>
     <delete id="deleteQuestion">
         delete from Question where id=#{qid}

@@ -54,7 +54,7 @@
             <div class="col-9 col-md-10 h-100 w-100" style="height: 100%">
                 <div class="tab-content">
                     <div class="tab-pane fade show active h-100" id="questionList" role="tabpanel" height="100%">
-                                    <form action="./questionEdit.do?method=ask" method="post">
+                                    <form action="../questionEdit.do?method=ask" method="get">
                                         <div class="mb-4 row text-center">
                                             <label for="title" class="control-label col-md-3">标题</label>
                                             <div class="col-md-8">
@@ -67,9 +67,8 @@
                                                 <input type="text" id="question" name="question" class="form-control" placeholder="请在此键入问题详情" />
                                             </div>
                                         </div>
-                                        <input class="btn-primary" type="submit"  value="提问"  name="ask" id="ask"/>
+                                        <input class="btn-primary" type="submit"  value="ask"  name="method" id="ask"/>
                                     </form>
-
                     </div>
                 </div>
             </div>

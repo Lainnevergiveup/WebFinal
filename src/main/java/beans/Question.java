@@ -1,7 +1,7 @@
 package beans;
 
 public class Question {
-    private int id;
+    private Integer id;
     private String cid;
     private String sid;
     private String title;
@@ -39,7 +39,7 @@ public class Question {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

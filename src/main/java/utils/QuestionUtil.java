@@ -27,6 +27,7 @@ public class QuestionUtil {
         return mapper.selectByCid(cid);
     }
     public int insertQuestion(Question question){
+        System.out.println("123"+question);
         return mapper.insertQuestion(question);
     }
     public int updateQuestion(Question question){

@@ -24,7 +24,8 @@ public class CourseQuestionsGetterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         initthis(request,response);
-        cid = request.getParameter("cid");
+        cid = (String) request.getSession().getAttribute("cid");
+        if(cid==null)cid = request.getParameter("cid");
         request.getSession().setAttribute("cid",cid);
         getQuestionData(request);
         if (account.getIdentity().equals("学生")) request.getRequestDispatcher("./jspFiles/QuestionList.jsp").forward(request,response);

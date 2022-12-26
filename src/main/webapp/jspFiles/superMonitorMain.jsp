@@ -100,7 +100,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${teacherList}" var="teacher">
-                                <form action="../TeacherChange.do" method="post">
+                                <form action="./TeacherChange.do" method="post">
                                     <tr>
                                         <th scope="row"><input type="text" name="id" value="${teacher.id}"></th>
                                         <td><input type="text" name="name" value="${teacher.name}"></td>

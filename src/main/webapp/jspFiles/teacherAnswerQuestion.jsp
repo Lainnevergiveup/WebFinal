@@ -58,11 +58,11 @@
                                     <p class="card-text">${q.question}</p>
                                 </div>
                             </div>
-                            <form action="./questionEdit.do?method=ans" method="get">
+                            <form action="./questionEdit.do?method=ans" method="post">
                                 <div class="form-group">
                                     <input type="text" name="answer"class="form-control" value="${q.answer}"/>
+                                    <input type="submit" name="method"class="form-control" value="ans"/>
                                 </div>
-                                <button type="submit" class="btn btn-primary">确定</button>
                             </form>
                             </c:if>
                     </div>

@@ -54,11 +54,24 @@
                         <c:if test="${!empty q}">
                         <div class="card" >
                                 <div class="card-body">
-                                    <h5 class="card-title"><b>${q.title}</b></h5>
-                                    <h6 class="card-subtitle my-2 text-muted">${q.state}</h6>
-                                    <p class="card-text">${q.question}</p>
-                                    <a href="./questionEdit.do?qid=${q.id}" class="card-link">问题修改</a>
-                                    <a href="./deletequestion.do?qid=${q.id}" class="card-link">删除</a>
+                                    <form action="./questionEdit.do?method=change" method="get">
+
+                                        <div class="mb-4 row text-center">
+                                            <label for="title" class="control-label col-md-3">标题</label>
+                                            <div class="col-md-8">
+                                                <input type="text" id="title" name="title" class="form-control" value="${q.title}" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row text-center">
+                                            <label for="question" class="control-label col-md-3">问题详情</label>
+                                            <div class="col-md-8">
+                                                <input type="text" id="question" name="question" class="form-control" value="${q.question}" />
+                                            </div>
+                                        </div>
+                                        <input class="btn-primary" type="submit"  value="change"  name="method" id="ask"/>
+                                        <a href="../deletequestion.do?qid=${q.id}" class="card-link">删除</a>
+                                    </form>
+
                                 </div>
                             </div>
                         </c:if>
