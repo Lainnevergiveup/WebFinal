@@ -49,7 +49,7 @@ public class TeacherChangeServlet extends HttpServlet {
     }
     protected void initthis(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("");
         try {
             courseUtil = new CourseUtil();
             tcUtil =new TCUtil();
