@@ -17,28 +17,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar20">
-        <p class="navbar-brand text-white mb-0">
-            <i class="fa d-inline fa-lg fa-stop-circle"></i> Web课后辅导系统教师端 </p>
-    </button>
-        <div class="collapse navbar-collapse" id="navbar20">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"> <a class="nav-link" href="../index.jsp">Home</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
-            </ul>
-            <p class="d-none d-md-block lead mb-0 text-white"> <i class="fa d-inline fa-lg fa-stop-circle"></i> <b> Web课后辅导系统教师端</b> </p>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-1"> <a class="nav-link" href="https://github.com/Lainnevergiveup/WebFinal">
-                    <i class="fa fa-github fa-fw fa-lg"></i>
-                </a> </li>
-                <li class="nav-item mx-1"> <a class="nav-link" href="../index.jsp">
-                    <i class="fa fa-bitbucket fa-fw fa-lg"></i>
-                </a> </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+
 <div class="py-5 h-100 w-100">
     <div class="container w-100 h-100" style="height: 100%">
         <div class="row" style="height: 100%">
@@ -50,7 +29,6 @@
             <div class="col-9 col-md-10 h-100 w-100" style="height: 100%">
                 <div class="tab-content">
                     <div class="tab-pane fade show active h-100" id="questionList" role="tabpanel" height="100%">
-
                         <c:forEach items="${questionList}" var="q">
                             <div class="card" >
                                 <div class="card-body">
